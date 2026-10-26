@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17152b">
+<title>BOUGIE BALANCE — Your Personal Wellness Club</title>
+<style>
+:root{--ink:#211d35;--muted:#79758e;--green:#7357f5;--sage:#eeeaff;--cream:#f6f4fc;--card:#ffffff;--line:#e8e4f2;--peach:#ffe7f0;--gold:#ffca73;--red:#d94e76;--purple:#7357f5;--aqua:#4ed8d0;--pink:#ff82b2;--night:#17152b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#e9e3ff 0,transparent 28%),var(--cream);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{transition:transform .16s,box-shadow .16s}button:hover{transform:translateY(-1px);box-shadow:0 6px 18px #34236c16}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1180px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:12px}.logo{width:50px;height:50px;border-radius:17px;background:linear-gradient(135deg,#8c70ff,#5738d8);color:white;display:grid;place-items:center;font-size:26px;box-shadow:0 8px 20px #7357f544}.brand h1{font-size:23px;margin:0;letter-spacing:-.6px}.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--line);background:white;color:var(--ink);border-radius:12px;padding:10px 14px;font-weight:650}.btn.primary{background:linear-gradient(135deg,#8b70ff,#6445e9);border-color:transparent;color:white;box-shadow:0 5px 14px #7357f52b}.btn.small{padding:7px 10px;font-size:13px}.datebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.datebar label{font-weight:700}.datebar input{width:auto}.datebar .sub{color:var(--muted);font-size:13px}.welcome{display:flex;justify-content:space-between;gap:20px;align-items:center;background:linear-gradient(115deg,#211b45,#4730a3 65%,#7357f5);color:white;border-radius:26px;padding:27px 29px;margin-bottom:18px;box-shadow:0 15px 34px #38208025;position:relative;overflow:hidden}.welcome:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff24;border-radius:50%;right:45px;top:-125px;box-shadow:0 0 0 28px #ffffff0b,0 0 0 58px #ffffff08}.welcome p{color:#e5e0ff}.welcome h2{font-size:28px}.leaf{z-index:1}.welcome h2{font-size:25px;letter-spacing:-.7px;margin:0 0 5px}.welcome p{margin:0;color:#53675a;max-width:650px}.leaf{font-size:43px}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:18px}.stat,.panel{background:var(--card);border:1px solid #eae6f5;border-radius:21px;padding:19px;box-shadow:0 6px 24px #30245b08}.stat{transition:transform .18s,box-shadow .18s}.stat:hover{transform:translateY(-2px);box-shadow:0 12px 25px #30245b10}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;font-weight:650}.stat-icon{width:34px;height:34px;border-radius:12px;background:#f0edff;display:grid;place-items:center}.stat-value{font-size:29px;font-weight:780;letter-spacing:-1px;margin:10px 0 2px}.stat-foot{font-size:12px;color:var(--muted)}.progress{height:7px;background:#e9ebe4;border-radius:99px;margin-top:12px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#8c70ff,#4ed8d0);border-radius:99px;width:0;transition:width .2s}.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:18px;align-items:start}.stack{display:grid;gap:18px}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}.panel h3{margin:0;font-size:18px;letter-spacing:-.3px}.panel-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.meal{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}.meal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:#f8f6ff}.meal-name{font-weight:750}.meal-kcal{color:var(--muted);font-size:13px}.meal-items{padding:0 14px}.food-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eff0e9}.food-row:last-child{border-bottom:0}.food-row strong{display:block;font-size:14px}.food-row small{display:block;color:var(--muted);font-size:12px;margin-top:2px}.food-right{text-align:right;white-space:nowrap;font-weight:700;font-size:14px}.delete{border:0;background:transparent;color:#9a756d;font-size:18px;margin-left:7px;padding:3px 5px}.empty{color:var(--muted);font-size:13px;padding:14px 0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:750;color:#5f6e64}.field input,.field select,.field textarea,.datebar input{width:100%;border:1px solid #dfe4da;background:white;border-radius:10px;padding:10px 11px;color:var(--ink);min-width:0}.field textarea{resize:vertical;min-height:70px}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #d5ccff;border-color:var(--green)}.add-form{border-top:1px solid var(--line);margin-top:14px;padding-top:15px}.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hint{font-size:12px;color:var(--muted);margin:10px 0 0}.activity-row{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eff0e9}.activity-row:last-child{border-bottom:0}.activity-row strong{font-size:14px}.activity-row small{display:block;color:var(--muted);font-size:12px}.activity-kcal{font-weight:750;font-size:14px;white-space:nowrap}.status{border-radius:14px;background:#f3f0ff;padding:14px;font-size:13px;color:#625a7e;margin-top:12px}.status strong{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}.goalrow{display:grid;grid-template-columns:1fr 110px;gap:10px;align-items:center;margin:12px 0}.goalrow label{font-size:13px;font-weight:650}.goalrow input{width:100%;border:1px solid var(--line);border-radius:9px;padding:9px}.history-table{width:100%;border-collapse:collapse;font-size:13px}.history-table th,.history-table td{text-align:left;padding:10px 7px;border-bottom:1px solid var(--line)}.history-table th{color:var(--muted);font-weight:650}.history-table tr:last-child td{border-bottom:0}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 8px}.notice{font-size:12px;line-height:1.55;color:#66756a;background:#f4f5ed;padding:12px;border-radius:12px;margin-top:12px}.hidden{display:none!important}.weight-chart{width:100%;height:120px;display:block;margin-top:10px}.mini-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini-metric{padding:12px;background:#f6f3ff;border-radius:14px}.mini-metric span{display:block;color:var(--muted);font-size:12px}.mini-metric strong{display:block;font-size:20px;margin-top:3px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.tab{border:1px solid var(--line);background:white;padding:8px 12px;border-radius:10px;font-size:13px;font-weight:650}.tab.active{background:var(--green);color:white;border-color:var(--green)}
+/* Bougie Balance analytics */
+.analytics-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin:0 0 18px}
+.chart-card{background:#fff;border:1px solid var(--line);border-radius:21px;padding:19px;box-shadow:0 6px 24px #30245b08;min-width:0}
+.chart-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.chart-title h3{margin:0;font-size:17px}.chart-title p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.chart-wrap{width:100%;overflow:hidden}.chart-svg{display:block;width:100%;height:auto;min-height:150px}
+.macro-row{display:grid;grid-template-columns:66px 1fr 44px;gap:8px;align-items:center;margin:14px 0;font-size:12px}
+.macro-track{height:9px;border-radius:99px;background:#f0edf7;overflow:hidden}.macro-track span{display:block;height:100%;border-radius:99px;width:0;background:linear-gradient(90deg,#8b70ff,#c5b8ff)}
+.macro-row:nth-child(3) .macro-track span{background:linear-gradient(90deg,#ff82b2,#ffc2d8)}.macro-row:nth-child(4) .macro-track span{background:linear-gradient(90deg,#4ed8d0,#9deee8)}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:6px}.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.ring-layout{display:flex;align-items:center;gap:18px}.activity-ring{width:112px;height:112px;flex:0 0 112px}.ring-copy strong{font-size:23px;display:block}.ring-copy span{font-size:12px;color:var(--muted)}
+.quick-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.pill{background:#f0edff;color:#6549df;border-radius:99px;padding:6px 10px;font-size:11px;font-weight:750;display:inline-block}
+.section-kicker{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:#8a7bbd;font-weight:800;margin-bottom:5px}
+@media(max-width:800px){.analytics-grid{grid-template-columns:1fr}.ring-layout{justify-content:flex-start}.welcome h2{font-size:24px}}
+@media(max-width:1000px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:800px){.shell{padding:14px}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.layout{grid-template-columns:1fr}.welcome{padding:19px}.welcome h2{font-size:22px}.leaf{font-size:32px}.top{align-items:flex-start}.brand h1{font-size:20px}.stat{padding:14px}.stat-value{font-size:25px}}@media(max-width:420px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.top{flex-direction:column}.top-actions{width:100%}.top-actions .btn{flex:1}.stats{gap:8px}.stat-foot{font-size:11px}.welcome{gap:8px}.leaf{display:none}}
+
+/* Night garden redesign */
+:root{--ink:#e7eee9;--muted:#9aaba4;--green:#8cc9a5;--sage:#1c302a;--cream:#0c1513;--card:#14211e;--line:#294139;--peach:#26372f;--gold:#d6c28a;--red:#f08b91;--purple:#8cc9a5;--aqua:#8fd8c4;--pink:#d4a9c6;--night:#09110f}
+body{background:radial-gradient(circle at 90% 0%,#1b3930 0,transparent 30%),#0b1412;color:var(--ink)}
+.btn,.tab,.field input,.field select,.field textarea,.datebar input,.goalrow input{background:#172722;color:var(--ink);border-color:#355147}
+.btn.primary,.tab.active{background:linear-gradient(135deg,#83c69e,#4f9277);color:#08130e;border-color:transparent}
+.welcome{background:linear-gradient(115deg,#142a23,#244a3c 65%,#34765a);box-shadow:0 15px 34px #0004}
+.welcome p{color:#c3d8cc}.welcome .section-kicker{color:#b5ddc3!important}
+.stat,.panel,.chart-card{background:#14211e;border-color:#294139;box-shadow:0 8px 26px #0002}
+.stat-icon,.mini-metric,.status,.meal-head,.notice{background:#1d322a;color:#c2d9cc}
+.field label{color:#b7c9bf}.progress{background:#263a32}.progress span{background:linear-gradient(90deg,#8cc9a5,#8fd8c4)}
+.meal,.food-row,.activity-row{border-color:#294139}.food-row{border-bottom-color:#294139}.macro-track{background:#263a32}.macro-row .macro-track span{background:linear-gradient(90deg,#8cc9a5,#8fd8c4)}
+.empty,.hint,.stat-foot,.stat-top,.panel-head p,.chart-title p{color:#9aaba4}.pill{background:#29483a;color:#c5e5d0}.delete{color:#f0a0a0}.history-table th,.history-table td{border-bottom-color:#294139}
+.add-form{border-top-color:#294139}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #5c9f7d;border-color:#8cc9a5}
+.extra-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin:0 0 18px}.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:10px}.photo-card{border:1px solid var(--line);border-radius:14px;padding:8px;min-width:0}.photo-card img{width:100%;height:105px;object-fit:cover;border-radius:9px}.photo-card small{display:block;color:var(--muted);overflow-wrap:anywhere}.avatar-preview{width:76px;height:76px;border-radius:25px;display:grid;place-items:center;font-size:38px;background:linear-gradient(135deg,#274b3b,#8cc9a5);border:1px solid #4b7c65}.dash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.dash-tile{background:#192b25;border:1px solid #2d493d;border-radius:17px;padding:15px}.dash-tile span{display:block;color:var(--muted);font-size:12px}.dash-tile strong{font-size:23px;display:block;margin:5px 0}.dash-tile .tinybar{height:6px;background:#2c4037;border-radius:99px;overflow:hidden}.tinybar i{display:block;height:100%;background:linear-gradient(90deg,#8cc9a5,#8fd8c4);border-radius:99px}.limit-alert{padding:12px 14px;border-radius:13px;background:#1b3529;border:1px solid #3e7055;color:#c6ead1;margin:10px 0}.limit-alert.over{background:#3a2525;border-color:#8e4c4c;color:#ffc7c7}.limit-alert.near{background:#3b3524;border-color:#827143;color:#f1e0a8}
+@media(max-width:800px){.extra-grid{grid-template-columns:1fr}.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.ai-food-panel{border-color:#315e4b}.ai-preview{display:block;max-width:100%;max-height:260px;object-fit:contain;border-radius:14px;margin-top:8px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div class="brand"><div class="logo">✦</div><div><h1>BOUGIE BALANCE</h1><p>Your personal wellness club · eat well, move joyfully</p></div></div>
+  <div class="top-actions"><button class="btn" id="exportBtn">Export my data</button><button class="btn" id="settingsBtn">⚙ Goals & preferences</button></div>
+</header>
+<div class="datebar"><label for="day">Your day</label><input id="day" type="date"><span class="sub">Choose any date to add or review entries.</span><button class="btn small" id="todayBtn">Today</button></div>
+<section class="welcome"><div><div class="section-kicker" style="color:#c6baff">YOUR DAILY RESET ✦</div><h2 id="greeting">Your wellness era starts here.</h2><p>Food, movement, hydration and rest — all your little wins in one gorgeous dashboard. Progress over perfection.</p><div class="quick-actions"><span class="pill" style="background:#ffffff20;color:white">✦ Your space, your pace</span><span class="pill" style="background:#ffffff20;color:white">♡ Gentle goals</span></div></div><div class="leaf">✦</div></section>
+<section class="stats">
+  <div class="stat"><div class="stat-top">Food energy <span class="stat-icon">🍚</span></div><div class="stat-value"><span id="foodTotal">0</span> <small style="font-size:13px;font-weight:600">kcal</small></div><div class="stat-foot" id="foodGoalText">Daily guide not set</div><div class="progress"><span id="foodBar"></span></div></div>
+  <div class="stat"><div class="stat-top">Movement <span class="stat-icon">🚶‍♀️</span></div><div class="stat-value"><span id="exerciseMins">0</span> <small style="font-size:13px;font-weight:600">min</small></div><div class="stat-foot" id="exerciseGoalText">Activity minutes today</div><div class="progress"><span id="exerciseBar"></span></div></div>
+  <div class="stat"><div class="stat-top">Water <span class="stat-icon">💧</span></div><div class="stat-value"><span id="waterTotal">0</span> <small style="font-size:13px;font-weight:600">ml</small></div><div class="stat-foot" id="waterGoalText">Daily guide not set</div><div class="progress"><span id="waterBar"></span></div></div>
+  <div class="stat"><div class="stat-top">Meals logged <span class="stat-icon">✓</span></div><div class="stat-value" id="mealCount">0/4</div><div class="stat-foot">Breakfast, lunch, dinner & snacks</div><div class="progress"><span id="mealBar"></span></div></div>
+  <div class="stat"><div class="stat-top">Steps <span class="stat-icon">👟</span></div><div class="stat-value"><span id="stepsTotal">0</span></div><div class="stat-foot" id="stepsGoalText">Manual step log</div><div class="progress"><span id="stepsBar"></span></div></div>
+</section>
+
+<section class="panel" style="margin-bottom:18px">
+ <div class="panel-head"><div><div class="section-kicker">YOUR WHOLE JOURNEY</div><h3>🌙 At-a-glance dashboard</h3><p>Daily totals, goal percentages and your personal progress in one place.</p></div><span class="pill">Saved day by day</span></div>
+ <div id="calorieAlert" class="limit-alert">Set a calorie guide in Goals & preferences to see your daily status.</div>
+ <div class="dash-grid">
+  <div class="dash-tile"><span>Food energy</span><strong><b id="dashKcal">0</b> kcal</strong><div class="tinybar"><i id="dashKcalBar" style="width:0%"></i></div><small id="dashKcalPct">No goal set</small></div>
+  <div class="dash-tile"><span>Exercise logged</span><strong><b id="dashBurn">0</b> kcal</strong><div class="tinybar"><i id="dashMoveBar" style="width:0%"></i></div><small id="dashMovePct">0 active minutes</small></div>
+  <div class="dash-tile"><span>Hydration</span><strong><b id="dashWater">0</b> ml</strong><div class="tinybar"><i id="dashWaterBar" style="width:0%"></i></div><small id="dashWaterPct">No goal set</small></div>
+  <div class="dash-tile"><span>Steps</span><strong><b id="dashSteps">0</b></strong><div class="tinybar"><i id="dashStepsBar" style="width:0%"></i></div><small id="dashStepsPct">No goal set</small></div>
+ </div>
+ <div class="analytics-grid" style="margin-top:16px"><div class="chart-card"><div class="chart-title"><div><h3>📊 Weekly movement</h3><p>Activity minutes and steps for the selected day and previous six days.</p></div></div><div class="chart-wrap"><svg id="weeklyActivityChart" class="chart-svg" viewBox="0 0 520 175" role="img" aria-label="Weekly activity chart"></svg></div><div class="chart-legend"><span><i class="legend-dot" style="background:#8cc9a5"></i>Activity minutes</span><span><i class="legend-dot" style="background:#8fd8c4"></i>Steps (relative scale)</span></div></div>
+ <div class="chart-card"><div class="chart-title"><div><h3>🥗 Macro snapshot</h3><p>Based on macro details entered with food.</p></div></div><div id="macroChart"><div class="empty">Log food macros to see them here.</div></div><div class="ring-layout" style="margin-top:14px"><svg class="activity-ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="47" fill="none" stroke="#294139" stroke-width="10"/><circle id="activityRingArc" cx="60" cy="60" r="47" fill="none" stroke="#8cc9a5" stroke-width="10" stroke-linecap="round" stroke-dasharray="295.3" stroke-dashoffset="295.3" transform="rotate(-90 60 60)"/><text id="activityRingText" x="60" y="66" text-anchor="middle" fill="#e7eee9" font-size="22" font-weight="700">0%</text></svg><div class="ring-copy"><strong id="ringMinutes">0 / 30 min</strong><span id="ringCaption">Every comfortable movement counts.</span></div></div></div></div>
+ <div class="panel-head" style="margin-top:6px"><div><h3>Consistency journey</h3><p>Check-in dots show days with at least one logged item.</p></div></div><div id="consistencyDots" style="display:flex;gap:8px"></div><div class="status" style="margin-top:14px"><strong id="insightTitle">Your journey, your pace ✨</strong><span id="insightText">Log a little today to build your history.</span></div>
+</section>
+<div class="extra-grid">
+ <section class="panel"><div class="panel-head"><div><h3>📸 Food photo journal</h3><p>Save meal photos as visual reminders alongside your daily food log.</p></div></div>
+  <div class="formgrid"><div class="field"><label for="photoMeal">Meal</label><select id="photoMeal"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snacks</option></select></div><div class="field"><label for="foodPhoto">Take or choose a photo</label><input id="foodPhoto" type="file" accept="image/*" capture="environment"></div><div class="field full"><label for="photoCaption">Caption / what was in the meal</label><input id="photoCaption" placeholder="e.g. chicken, red rice and vegetables"></div></div><div class="form-actions"><button class="btn primary" id="saveFoodPhoto" type="button">＋ Save photo memory</button></div><p class="hint">Photos are stored in this browser on this device. Export your data regularly; photos are not included in the CSV backup.</p><div class="photo-grid" id="photoGallery" style="margin-top:14px"></div>
+ </section>
+ <section class="panel"><div class="panel-head"><div><h3>🧚 Your avatar</h3><p>Make this little corner feel like yours.</p></div><div class="avatar-preview" id="avatarPreview">🌿</div></div><div class="formgrid"><div class="field"><label for="avatarEmoji">Avatar</label><select id="avatarEmoji"><option>🌿</option><option>🦋</option><option>🌙</option><option>🐈</option><option>🌸</option><option>🧚</option><option>⭐</option><option>🍀</option></select></div><div class="field"><label for="avatarName">Display name</label><input id="avatarName" placeholder="Your name or nickname" maxlength="35"></div><div class="field full"><label for="avatarColor">Accent mood</label><select id="avatarColor"><option value="#8cc9a5">Sage green</option><option value="#8fd8c4">Sea glass</option><option value="#d4a9c6">Dusty mauve</option><option value="#d6c28a">Soft olive gold</option></select></div></div><div class="form-actions"><button class="btn primary" id="saveAvatar" type="button">Save my look</button></div><p class="hint" id="avatarGreeting">A small space that's yours.</p></section>
+</div>
+
+<div class="layout">
+ <div class="stack">
+  <section class="panel">
+   <div class="panel-head"><div><h3>🍽️ Food diary</h3><p>Add exact foods and portions for each meal.</p></div><button class="btn small" id="clearFood">Clear day</button></div>
+   <div id="meals"></div>
+   <div class="add-form">
+    <h3 style="font-size:16px;margin-bottom:12px">Add food or drink</h3>
+    <form id="foodForm">
+     <div class="formgrid">
+      <div class="field"><label for="mealType">Meal</label><select id="mealType"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snacks</option></select></div>
+      <div class="field"><label for="foodName">Food / drink name *</label><input id="foodName" required placeholder="e.g. string hoppers"></div>
+      <div class="field"><label for="portion">Portion / amount</label><input id="portion" placeholder="e.g. 3 pieces, 1 cup"></div>
+      <div class="field"><label for="foodKcal">Calories (kcal) *</label><input id="foodKcal" type="number" min="0" step="1" required placeholder="e.g. 220"></div>
+      <div class="field"><label for="foodProtein">Protein (g, optional)</label><input id="foodProtein" type="number" min="0" step="0.1" placeholder="e.g. 8"></div>
+      <div class="field"><label for="foodCarbs">Carbohydrates (g)</label><input id="foodCarbs" type="number" min="0" step="0.1" placeholder="optional"></div>
+      <div class="field"><label for="foodFat">Fat (g)</label><input id="foodFat" type="number" min="0" step="0.1" placeholder="optional"></div>
+      <div class="field"><label for="foodNotes">Notes (optional)</label><input id="foodNotes" placeholder="e.g. homemade, less oil"></div>
+     </div>
+     <div class="form-actions"><button class="btn primary" type="submit">＋ Add food</button><button class="btn" type="reset">Reset fields</button></div>
+    </form>
+    <p class="hint">Calories vary by recipe, oil, serving size and brand. Use a package label or a reliable food database when possible.</p>
+   </div>
+  </section>
+
+  <section class="panel">
+   <div class="panel-head"><div><h3>🏃‍♀️ Movement & exercise</h3><p>Log walks, housework, stretching, gym sessions or any movement.</p></div><button class="btn small" id="clearExercise">Clear day</button></div>
+   <div id="exerciseList"></div>
+   <div class="add-form">
+    <form id="exerciseForm">
+     <div class="formgrid">
+      <div class="field"><label for="exerciseName">Activity *</label><input id="exerciseName" required placeholder="e.g. brisk walk"></div>
+      <div class="field"><label for="exerciseType">Type</label><select id="exerciseType"><option>Walking</option><option>Strength</option><option>Cardio</option><option>Yoga / stretching</option><option>Housework</option><option>Other</option></select></div>
+      <div class="field"><label for="exerciseDuration">Duration (minutes) *</label><input id="exerciseDuration" type="number" min="1" step="1" required placeholder="e.g. 30"></div>
+      <div class="field"><label for="exerciseKcal">Calories burned (optional)</label><input id="exerciseKcal" type="number" min="0" step="1" placeholder="Can leave blank"></div>
+      <div class="field full"><label for="exerciseNotes">How did it feel? (optional)</label><input id="exerciseNotes" placeholder="e.g. felt energised, easy pace"></div>
+     </div>
+     <div class="form-actions"><button class="btn primary" type="submit">＋ Add activity</button></div>
+    </form>
+    <p class="hint">Exercise calorie estimates are rough and optional. They are not subtracted from food intake in the totals.</p>
+   </div>
+  </section>
+ </div>
+ <div class="stack">
+  <section class="panel">
+   <div class="panel-head"><div><h3>💧 Water tracker</h3><p>Tap to add what you drink.</p></div></div>
+   <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><div><div style="font-size:26px;font-weight:800" id="waterBig">0 ml</div><div class="hint" style="margin:0">Logged today</div></div><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn small waterAdd" data-ml="150">+150 ml</button><button class="btn small waterAdd" data-ml="250">+250 ml</button><button class="btn small waterAdd" data-ml="500">+500 ml</button></div></div>
+   <div class="formgrid" style="margin-top:13px"><div class="field"><label for="customWater">Other quantity (ml)</label><input id="customWater" type="number" min="1" step="1" placeholder="e.g. 180 or 350"></div><div class="field" style="justify-content:end"><button class="btn primary" id="addCustomWater" type="button">＋ Add quantity</button></div></div><div class="form-actions"><button class="btn small" id="waterUndo">Undo last</button><button class="btn small" id="waterReset">Reset water</button></div>
+  </section>
+  <section class="panel">
+   <div class="panel-head"><div><h3>👟 Steps & activity</h3><p>Enter your phone/watch step count or a manual estimate.</p></div></div>
+   <div class="formgrid">
+    <div class="field"><label for="stepsInput">Steps today</label><input id="stepsInput" type="number" min="0" step="1" placeholder="e.g. 6420"></div>
+    <div class="field"><label for="activeMinutes">Active minutes (optional)</label><input id="activeMinutes" type="number" min="0" step="1" placeholder="e.g. 35"></div>
+   </div>
+   <div class="form-actions"><button class="btn primary" id="saveSteps" type="button">Save steps</button></div>
+   <div class="mini-metrics"><div class="mini-metric"><span>Step goal</span><strong id="stepsProgressText">Not set</strong></div><div class="mini-metric"><span>Active minutes</span><strong id="activeMinutesText">0 min</strong></div></div>
+   <p class="hint">This website does not automatically read Apple Health or your phone's motion sensors. Copy the number from your phone/watch and enter it here.</p>
+  </section>
+  <section class="panel">
+   <div class="panel-head"><div><h3>⚖️ Weight journal</h3><p>Record measurements over time, if tracking is useful for you.</p></div></div>
+   <form id="weightForm">
+    <div class="formgrid">
+     <div class="field"><label for="weightInput">Weight (kg) *</label><input id="weightInput" type="number" min="1" max="500" step="0.1" required placeholder="e.g. 68.4"></div>
+     <div class="field"><label for="weightNote">Note (optional)</label><input id="weightNote" placeholder="e.g. morning measurement"></div>
+    </div>
+    <div class="form-actions"><button class="btn primary" type="submit">＋ Save weight</button></div>
+   </form>
+   <div class="mini-metrics"><div class="mini-metric"><span>Latest recorded</span><strong id="latestWeight">—</strong></div><div class="mini-metric"><span>Change since previous</span><strong id="weightChange">—</strong></div></div>
+   <svg class="weight-chart" id="weightChart" viewBox="0 0 320 120" role="img" aria-label="Weight history chart"></svg>
+   <div id="weightHistory"></div>
+   <p class="hint">Weight naturally fluctuates. This is a neutral record, not a score; you can use the tracker without setting a target.</p>
+  </section>
+  <section class="panel">
+   <div class="panel-head"><div><h3>🌼 Daily check-in</h3><p>Wellbeing matters too.</p></div></div>
+   <div class="formgrid">
+    <div class="field"><label for="mood">How was your mood?</label><select id="mood"><option value="">Choose…</option><option>😊 Good</option><option>🙂 Okay</option><option>😐 Neutral</option><option>😔 Low</option><option>😣 Stressed</option></select></div>
+    <div class="field"><label for="sleep">Sleep (hours)</label><input id="sleep" type="number" min="0" max="24" step="0.5" placeholder="e.g. 7.5"></div>
+    <div class="field full"><label for="dayNotes">Notes for today</label><textarea id="dayNotes" placeholder="Energy, hunger, celebrations, symptoms, or anything you want to remember…"></textarea></div>
+   </div>
+   <div class="form-actions"><button class="btn primary" id="saveCheckin">Save check-in</button></div><p class="hint" id="checkinStatus">Your check-in is saved on this device when you press save.</p>
+  </section>
+  <section class="panel">
+   <div class="panel-head"><div><h3>📅 Recent days</h3><p>A simple look at your daily logging.</p></div><button class="btn small" id="refreshHistory">Refresh</button></div>
+   <div id="history"></div>
+  </section>
+  <section class="panel hidden" id="settings">
+   <div class="panel-head"><div><h3>⚙️ Personal goals</h3><p>Optional guides, not pass/fail rules.</p></div><button class="btn small" id="closeSettings">Close</button></div>
+   <div class="goalrow"><label for="goalKcal">Daily calorie guide (kcal)</label><input id="goalKcal" type="number" min="0" placeholder="Not set"></div>
+   <div class="goalrow"><label for="goalMinutes">Activity minutes goal</label><input id="goalMinutes" type="number" min="0" placeholder="e.g. 30"></div>
+   <div class="goalrow"><label for="goalWater">Water guide (ml)</label><input id="goalWater" type="number" min="0" placeholder="Not set"></div>
+   <div class="goalrow"><label for="goalSteps">Daily steps guide</label><input id="goalSteps" type="number" min="0" placeholder="e.g. 6000"></div>
+   <div class="notice">A suitable calorie target depends on height, weight, health, activity and goals. No target is set by default. For a 45-year-old woman, a clinician or registered dietitian can help set an appropriate target, especially with medical conditions or medication. Water needs also vary with weather, activity and health.</div>
+   <div class="form-actions"><button class="btn primary" id="saveGoals">Save goals</button><button class="btn" id="resetGoals">Remove goals</button></div>
+  </section>
+  <section class="panel">
+   <div class="panel-head"><div><h3>✨ Gentle daily summary</h3><p>Based on the entries you have logged.</p></div></div>
+   <div class="status" id="summary"><strong>Ready when you are</strong>Add food, movement and water to see your summary.</div>
+   <div class="notice">This tracker is for general wellbeing and record-keeping, not medical advice. It does not diagnose nutritional adequacy. Calories and exercise estimates can be inaccurate, so use them as approximations.</div>
+  </section>
+ </div>
+</div>
+<div class="footer">BOUGIE BALANCE ✦ Your data stays in this browser on this device. Export regularly for a backup.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+let selectedDay=todayISO();
+let store={};
+try{store=JSON.parse(localStorage.getItem('dailyBalanceData')||'{}')||{}}catch(e){store={}}
+let goals={kcal:null,minutes:30,water:null,steps:null};
+try{goals={...goals,...JSON.parse(localStorage.getItem('dailyBalanceGoals')||'{}')}}catch(e){}
+const blank=()=>({foods:[],activities:[],water:[],steps:0,activeMinutes:0,weights:[],checkin:{mood:'',sleep:'',notes:''}});
+function dayData(){if(!store[selectedDay])store[selectedDay]=blank();let d=store[selectedDay];d.foods??=[];d.activities??=[];d.water??=[];d.steps??=0;d.activeMinutes??=0;d.weights??=[];d.checkin??={mood:'',sleep:'',notes:''};return d}
+function save(){localStorage.setItem('dailyBalanceData',JSON.stringify(store));render()}
+function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function num(v){return Number(v)||0}
+function render(){
+ const d=dayData(), foods=d.foods, acts=d.activities, water=d.water.reduce((a,b)=>a+num(b.ml),0);
+ const foodTotal=foods.reduce((a,b)=>a+num(b.kcal),0), mins=acts.reduce((a,b)=>a+num(b.minutes),0), prot=foods.reduce((a,b)=>a+num(b.protein),0), steps=num(d.steps), weights=d.weights||[];
+ $('foodTotal').textContent=Math.round(foodTotal).toLocaleString();$('exerciseMins').textContent=mins;$('waterTotal').textContent=water.toLocaleString();$('waterBig').textContent=water.toLocaleString()+' ml';
+ $('foodGoalText').textContent=goals.kcal?`${Math.round(foodTotal/goals.kcal*100)}% of your guide (${goals.kcal} kcal)`:'No calorie guide set';$('foodBar').style.width=goals.kcal?Math.min(100,foodTotal/goals.kcal*100)+'%':'0%';
+ $('exerciseGoalText').textContent=goals.minutes?`${mins} of ${goals.minutes} minutes`:`${mins} minutes logged`;$('exerciseBar').style.width=goals.minutes?Math.min(100,mins/goals.minutes*100)+'%':'0%';
+ $('waterGoalText').textContent=goals.water?`${Math.round(water/goals.water*100)}% of your guide`:'No water guide set';$('waterBar').style.width=goals.water?Math.min(100,water/goals.water*100)+'%':'0%';
+ const logged=['Breakfast','Lunch','Dinner','Snacks'].filter(m=>foods.some(f=>f.meal===m)).length;$('mealCount').textContent=logged+'/4';$('mealBar').style.width=logged/4*100+'%';$('stepsTotal').textContent=steps.toLocaleString();$('stepsGoalText').textContent=goals.steps?`${Math.round(steps/goals.steps*100)}% of ${Number(goals.steps).toLocaleString()} steps`:'Manual step log';$('stepsBar').style.width=goals.steps?Math.min(100,steps/goals.steps*100)+'%':'0%';$('stepsInput').value=d.steps||'';$('activeMinutes').value=d.activeMinutes||'';$('stepsProgressText').textContent=goals.steps?`${Math.min(100,Math.round(steps/goals.steps*100))}%`:'Not set';$('activeMinutesText').textContent=(d.activeMinutes||0)+' min';renderWeight(weights);
+ $('meals').innerHTML=['Breakfast','Lunch','Dinner','Snacks'].map(meal=>{let items=foods.filter(f=>f.meal===meal),sum=items.reduce((a,b)=>a+num(b.kcal),0);return `<div class="meal"><div class="meal-head"><span class="meal-name">${meal}</span><span class="meal-kcal">${Math.round(sum)} kcal</span></div><div class="meal-items">${items.length?items.map(f=>`<div class="food-row"><div><strong>${escapeHTML(f.name)}</strong><small>${escapeHTML(f.portion||'Portion not specified')}${f.protein!==''&&f.protein!=null?' · '+escapeHTML(f.protein)+' g protein':''}${f.notes?' · '+escapeHTML(f.notes):''}</small></div><div class="food-right">${Math.round(num(f.kcal))} kcal <button class="delete" title="Delete food" aria-label="Delete food" data-delete-food="${f.id}">×</button></div></div>`).join(''):'<div class="empty">Nothing logged yet.</div>'}</div></div>`}).join('');
+ $('exerciseList').innerHTML=acts.length?acts.map(a=>`<div class="activity-row"><div><strong>${escapeHTML(a.name)}</strong><small>${escapeHTML(a.type)} · ${a.minutes} min${a.notes?' · '+escapeHTML(a.notes):''}</small></div><div class="activity-kcal">${a.kcal!==''&&a.kcal!=null?Math.round(num(a.kcal))+' kcal':''}<button class="delete" title="Delete activity" aria-label="Delete activity" data-delete-activity="${a.id}">×</button></div></div>`).join(''):'<div class="empty">No movement logged yet. Every bit counts.</div>';
+ $('mood').value=d.checkin.mood||'';$('sleep').value=d.checkin.sleep||'';$('dayNotes').value=d.checkin.notes||'';
+ let msg='<strong>Ready when you are</strong>Log what you ate or how you moved to build your day summary.';
+ if(foods.length||acts.length||water){msg=`<strong>${foods.length||acts.length?'Your day is taking shape':'Water logged'} 🌿</strong>${foods.length?`${foods.length} food item${foods.length===1?'':'s'} logged · ${Math.round(foodTotal).toLocaleString()} kcal of food. `:''}${acts.length?`${acts.length} activity session${acts.length===1?'':'s'} · ${mins} minutes of movement. `:''}${water?`${water.toLocaleString()} ml water logged. `:''}${prot?`Protein logged: ${Math.round(prot)} g. `:''}${goals.kcal?(foodTotal<goals.kcal?'Food energy is below your chosen guide so far.':foodTotal===goals.kcal?'You are at your chosen food-energy guide.':'You are above your chosen food-energy guide.')+' ':''}${goals.minutes?(mins>=goals.minutes?'You have reached your activity-minute guide.':'Keep it comfortable; there is no need to force activity to hit a number.'):'Small, sustainable habits are worthwhile.'}`;}
+ $('summary').innerHTML=msg;
+ renderHistory();
+ renderAnalytics();
+}
+function renderAnalytics(){
+ const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+ const days=[];
+ for(let i=6;i>=0;i--){const dt=new Date(selectedDay+'T12:00:00');dt.setDate(dt.getDate()-i);const key=`${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;const d=store[key]||{};days.push({key,label:names[dt.getDay()],mins:(d.activities||[]).reduce((s,a)=>s+num(a.minutes),0),steps:num(d.steps),logged:!!((d.foods||[]).length||(d.activities||[]).length||(d.water||[]).length||(d.weights||[]).length||d.checkin?.mood||d.checkin?.notes)});}
+ const svg=$('weeklyActivityChart'),max=Math.max(30,...days.map(d=>d.mins)),stepMax=Math.max(1000,...days.map(d=>d.steps));
+ const bars=days.map((d,i)=>{const x=42+i*67,h=Math.max(2,d.mins/max*112),y=139-h,sh=d.steps/stepMax*48,sy=139-sh;return `<rect x="${x}" y="${y}" width="22" height="${h}" rx="7" fill="#7357f5" opacity=".92"><title>${d.key}: ${d.mins} activity minutes</title></rect><rect x="${x+25}" y="${sy}" width="12" height="${sh}" rx="5" fill="#4ed8d0"><title>${d.steps.toLocaleString()} steps</title></rect><text x="${x+18}" y="162" text-anchor="middle" fill="#79758e" font-size="11">${d.label}</text>`}).join('');
+ svg.innerHTML=`<line x1="30" y1="139" x2="505" y2="139" stroke="#e8e4f2"/><line x1="30" y1="83" x2="505" y2="83" stroke="#f0edf7" stroke-dasharray="3 4"/><line x1="30" y1="27" x2="505" y2="27" stroke="#f0edf7" stroke-dasharray="3 4"/>${bars}`;
+ const d=dayData(),foods=d.foods||[],sum=k=>foods.reduce((s,f)=>s+num(f[k]),0),p=sum('protein'),c=sum('carbs'),fat=sum('fat'),total=p+c+fat;
+ $('macroChart').innerHTML=total?`<div class="macro-row"><span>Protein</span><div class="macro-track"><span style="width:${p/Math.max(p,c,fat,1)*100}%"></span></div><strong>${p.toFixed(1)}g</strong></div><div class="macro-row"><span>Carbs</span><div class="macro-track"><span style="width:${c/Math.max(p,c,fat,1)*100}%"></span></div><strong>${c.toFixed(1)}g</strong></div><div class="macro-row"><span>Fat</span><div class="macro-track"><span style="width:${fat/Math.max(p,c,fat,1)*100}%"></span></div><strong>${fat.toFixed(1)}g</strong></div><p class="hint">Logged grams only; missing food details won't be included.</p>`:'<div class="empty">Add protein, carbs and fats to your food entries to see your mix here.</div>';
+ const goal=Math.max(1,num(goals.minutes)||30),mins=d.activities.reduce((s,a)=>s+num(a.minutes),0),pct=Math.min(100,Math.round(mins/goal*100));
+ $('activityRingArc').setAttribute('stroke-dashoffset',String(295.3*(1-pct/100)));$('activityRingText').textContent=pct+'%';$('ringMinutes').textContent=`${mins} / ${goal} min`;$('ringCaption').textContent=mins>=goal?'You reached your chosen movement guide. Nice work!':'Any comfortable movement counts; this is just a guide.';
+ $('consistencyDots').innerHTML=days.map(x=>`<div style="text-align:center;flex:1"><div title="${x.key}${x.logged?' · entries logged':' · no entries'}" style="height:34px;border-radius:12px;background:${x.logged?'linear-gradient(135deg,#8b70ff,#4ed8d0)':'#f0edf7'};display:grid;place-items:center;color:${x.logged?'white':'#9b96ae'};font-weight:800">${x.logged?'✓':'·'}</div><div style="font-size:10px;color:#79758e;margin-top:6px">${x.label}</div></div>`).join('');
+ $('insightTitle').textContent=foods.length?'Your food diary is growing ✨':'Little wins count ✨';
+ $('insightText').textContent=foods.length?`${foods.length} food entries today, with ${Math.round(sum('protein'))} g protein logged. Add macro details when you have them.`:'Log a meal, a walk or a glass of water and your personal insights will update.';
+}
+function renderWeight(weights){
+ const sorted=[...(weights||[])].sort((a,b)=>a.date.localeCompare(b.date));
+ const latest=sorted[sorted.length-1], prev=sorted[sorted.length-2];
+ $('latestWeight').textContent=latest?Number(latest.kg).toFixed(1)+' kg':'—';
+ if(latest&&prev){let diff=Number(latest.kg)-Number(prev.kg);$('weightChange').textContent=(diff>0?'+':'')+diff.toFixed(1)+' kg';}else{$('weightChange').textContent='—';}
+ const svg=$('weightChart');
+ if(!sorted.length){svg.innerHTML='<text x="160" y="62" text-anchor="middle" fill="#738078" font-size="12">Your weight entries will appear here</text>';$('weightHistory').innerHTML='<div class="empty">No weight entries yet.</div>';return;}
+ const vals=sorted.map(x=>Number(x.kg)),min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;
+ const pts=vals.map((v,i)=>`${20+i*(280/Math.max(1,vals.length-1))},${96-((v-min)/range)*70}`).join(' ');
+ svg.innerHTML=`<line x1="16" y1="98" x2="304" y2="98" stroke="#e5e8df"/><polyline points="${pts}" fill="none" stroke="#315e4b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`+vals.map((v,i)=>{let x=20+i*(280/Math.max(1,vals.length-1)),y=96-((v-min)/range)*70;return `<circle cx="${x}" cy="${y}" r="4" fill="#315e4b"/>`}).join('');
+ const recent=[...sorted].reverse().slice(0,5);
+ $('weightHistory').innerHTML='<table class="history-table"><thead><tr><th>Date</th><th>Weight</th><th>Note</th><th></th></tr></thead><tbody>'+recent.map(w=>`<tr><td>${escapeHTML(w.date)}</td><td>${Number(w.kg).toFixed(1)} kg</td><td>${escapeHTML(w.note||'—')}</td><td><button class="delete" data-delete-weight="${w.id}" aria-label="Delete weight entry">×</button></td></tr>`).join('')+'</tbody></table>';
+}
+function renderHistory(){
+ let days=Object.keys(store).filter(k=>store[k]&&(store[k].foods?.length||store[k].activities?.length||store[k].water?.length||store[k].checkin?.mood||store[k].checkin?.notes)).sort((a,b)=>b.localeCompare(a)).slice(0,7);
+ if(!days.length){$('history').innerHTML='<div class="empty">Your logged days will appear here.</div>';return}
+ $('history').innerHTML='<table class="history-table"><thead><tr><th>Date</th><th>Food kcal</th><th>Move</th><th>Steps</th></tr></thead><tbody>'+days.map(day=>{let d=store[day],k=(d.foods||[]).reduce((s,x)=>s+num(x.kcal),0),m=(d.activities||[]).reduce((s,x)=>s+num(x.minutes),0);return `<tr><td><button class="btn small" data-open-day="${day}">${day===todayISO()?'Today':new Date(day+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short'})}</button></td><td>${Math.round(k).toLocaleString()}</td><td>${m} min</td><td>${num(d.steps).toLocaleString()}</td></tr>`}).join('')+'</tbody></table>';
+}
+$('day').value=selectedDay;
+$('day').addEventListener('change',e=>{selectedDay=e.target.value||todayISO();$('day').value=selectedDay;render()});
+$('todayBtn').onclick=()=>{selectedDay=todayISO();$('day').value=selectedDay;render()};
+$('foodForm').addEventListener('submit',e=>{e.preventDefault();let d=dayData();d.foods.push({id:Date.now()+Math.random(),meal:$('mealType').value,name:$('foodName').value.trim(),portion:$('portion').value.trim(),kcal:num($('foodKcal').value),protein:$('foodProtein').value===''?'':num($('foodProtein').value),carbs:$('foodCarbs').value===''?'':num($('foodCarbs').value),fat:$('foodFat').value===''?'':num($('foodFat').value),notes:$('foodNotes').value.trim()});save();e.target.reset()});
+$('exerciseForm').addEventListener('submit',e=>{e.preventDefault();dayData().activities.push({id:Date.now()+Math.random(),name:$('exerciseName').value.trim(),type:$('exerciseType').value,minutes:num($('exerciseDuration').value),kcal:$('exerciseKcal').value===''?'':num($('exerciseKcal').value),notes:$('exerciseNotes').value.trim()});save();e.target.reset()});
+document.addEventListener('click',e=>{let f=e.target.dataset.deleteFood,a=e.target.dataset.deleteActivity,w=e.target.dataset.deleteWeight,day=e.target.dataset.openDay;if(w){dayData().weights=dayData().weights.filter(x=>String(x.id)!==w);save()}if(f){dayData().foods=dayData().foods.filter(x=>String(x.id)!==f);save()}if(a){dayData().activities=dayData().activities.filter(x=>String(x.id)!==a);save()}if(day){selectedDay=day;$('day').value=day;render()}});
+$('clearFood').onclick=()=>{if(confirm('Remove all food entries for this day?')){dayData().foods=[];save()}};
+$('clearExercise').onclick=()=>{if(confirm('Remove all activity entries for this day?')){dayData().activities=[];save()}};
+document.querySelectorAll('.waterAdd').forEach(b=>b.onclick=()=>{dayData().water.push({ml:num(b.dataset.ml),id:Date.now()});save()});
+$('addCustomWater').onclick=()=>{let ml=num($('customWater').value);if(ml>0){dayData().water.push({ml,id:Date.now()});$('customWater').value='';save()}};
+$('saveSteps').onclick=()=>{dayData().steps=num($('stepsInput').value);dayData().activeMinutes=num($('activeMinutes').value);save()};
+$('weightForm').addEventListener('submit',e=>{e.preventDefault();dayData().weights.push({id:Date.now()+Math.random(),date:selectedDay,kg:num($('weightInput').value),note:$('weightNote').value.trim()});save();e.target.reset()});
+$('waterUndo').onclick=()=>{dayData().water.pop();save()};$('waterReset').onclick=()=>{if(confirm('Reset water entries for this day?')){dayData().water=[];save()}};
+$('saveCheckin').onclick=()=>{dayData().checkin={mood:$('mood').value,sleep:$('sleep').value,notes:$('dayNotes').value};localStorage.setItem('dailyBalanceData',JSON.stringify(store));$('checkinStatus').textContent='Saved for '+selectedDay+' ✓';render()};
+$('settingsBtn').onclick=()=>{$('settings').classList.remove('hidden');$('settings').scrollIntoView({behavior:'smooth',block:'start'});$('goalKcal').value=goals.kcal??'';$('goalMinutes').value=goals.minutes??'';$('goalWater').value=goals.water??'';$('goalSteps').value=goals.steps??''};
+$('closeSettings').onclick=()=>$('settings').classList.add('hidden');
+$('saveGoals').onclick=()=>{goals={kcal:$('goalKcal').value===''?null:num($('goalKcal').value),minutes:$('goalMinutes').value===''?null:num($('goalMinutes').value),water:$('goalWater').value===''?null:num($('goalWater').value),steps:$('goalSteps').value===''?null:num($('goalSteps').value)};localStorage.setItem('dailyBalanceGoals',JSON.stringify(goals));$('settings').classList.add('hidden');render()};
+$('resetGoals').onclick=()=>{goals={kcal:null,minutes:null,water:null,steps:null};localStorage.setItem('dailyBalanceGoals',JSON.stringify(goals));$('goalKcal').value='';$('goalMinutes').value='';$('goalWater').value='';$('goalSteps').value='';render()};
+$('refreshHistory').onclick=renderHistory;
+$('exportBtn').onclick=()=>{let rows=[['Date','Entry type','Meal / activity','Name','Portion / duration','Calories kcal','Protein g','Carbs g','Fat g','Notes']];Object.keys(store).sort().forEach(day=>{let d=store[day];(d.foods||[]).forEach(f=>rows.push([day,'Food',f.meal,f.name,f.portion,f.kcal,f.protein,f.carbs,f.fat,f.notes]));(d.activities||[]).forEach(a=>rows.push([day,'Activity',a.type,a.name,a.minutes+' minutes',a.kcal,'',a.notes]));if(d.checkin&&(d.checkin.mood||d.checkin.sleep||d.checkin.notes))rows.push([day,'Check-in','','',`Sleep: ${d.checkin.sleep} h`,'','',`Mood: ${d.checkin.mood}; ${d.checkin.notes}`]);(d.water||[]).forEach(w=>rows.push([day,'Water','','',w.ml+' ml','','','']));if(d.steps||d.activeMinutes)rows.push([day,'Activity summary','Steps',d.steps+' steps',d.activeMinutes+' active minutes','','','']);(d.weights||[]).forEach(w=>rows.push([day,'Weight','','',w.kg+' kg','','',w.note]))});let csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='daily-balance-tracker.csv';a.click();URL.revokeObjectURL(url)};
+
+// Photo memories and avatar settings are stored locally on this device.
+let photoMemories=[];try{photoMemories=JSON.parse(localStorage.getItem('bougiePhotoMemories')||'[]')}catch(e){photoMemories=[]}
+let avatarPrefs={emoji:'🌿',name:'',color:'#8cc9a5'};try{avatarPrefs={...avatarPrefs,...JSON.parse(localStorage.getItem('bougieAvatarPrefs')||'{}')}}catch(e){}
+function renderPhotoGallery(){const list=photoMemories.filter(x=>x.date===selectedDay);$('photoGallery').innerHTML=list.length?list.map(x=>`<div class="photo-card"><img src="${x.image}" alt="Food memory"><strong>${escapeHTML(x.meal)}</strong><small>${escapeHTML(x.caption||'Food memory')}</small><small>${escapeHTML(x.date)}</small><button class="btn small" data-delete-photo="${x.id}" style="margin-top:6px">Remove</button></div>`).join(''):'<div class="empty">No food photos saved for this day yet.</div>'}
+function renderAvatar(){const e=$('avatarEmoji'),n=$('avatarName'),c=$('avatarColor');if(!e)return;e.value=avatarPrefs.emoji;n.value=avatarPrefs.name;c.value=avatarPrefs.color;$('avatarPreview').textContent=avatarPrefs.emoji;$('avatarPreview').style.background=`linear-gradient(135deg,#203c30,${avatarPrefs.color})`;$('avatarGreeting').textContent=avatarPrefs.name?`Your wellness corner, ${avatarPrefs.name} ✨`:'A small space that is yours.'}
+$('saveFoodPhoto').onclick=()=>{const file=$('foodPhoto').files[0];if(!file){alert('Choose or take a food photo first.');return}if(file.size>3*1024*1024){alert('Please choose a photo under 3 MB so it can be saved reliably on this device.');return}const reader=new FileReader();reader.onload=()=>{photoMemories.push({id:String(Date.now()),date:selectedDay,meal:$('photoMeal').value,caption:$('photoCaption').value.trim(),image:reader.result});try{localStorage.setItem('bougiePhotoMemories',JSON.stringify(photoMemories));renderPhotoGallery();$('foodPhoto').value='';$('photoCaption').value=''}catch(e){photoMemories.pop();alert('Browser storage is full. Remove older photo memories or choose a smaller photo.')}};reader.readAsDataURL(file)};
+document.addEventListener('click',e=>{const id=e.target.dataset.deletePhoto;if(id){photoMemories=photoMemories.filter(x=>x.id!==id);localStorage.setItem('bougiePhotoMemories',JSON.stringify(photoMemories));renderPhotoGallery()}});
+$('saveAvatar').onclick=()=>{avatarPrefs={emoji:$('avatarEmoji').value,name:$('avatarName').value.trim(),color:$('avatarColor').value};localStorage.setItem('bougieAvatarPrefs',JSON.stringify(avatarPrefs));renderAvatar()};
+const originalRender=render;render=function(){originalRender();const d=dayData(),kcal=d.foods.reduce((s,f)=>s+num(f.kcal),0),burn=d.activities.reduce((s,a)=>s+num(a.kcal),0),mins=d.activities.reduce((s,a)=>s+num(a.minutes),0),water=d.water.reduce((s,x)=>s+num(x.ml),0),steps=num(d.steps);$('dashKcal').textContent=Math.round(kcal).toLocaleString();$('dashBurn').textContent=Math.round(burn).toLocaleString();$('dashWater').textContent=water.toLocaleString();$('dashSteps').textContent=steps.toLocaleString();
+const fill=(id,pct)=>$(id).style.width=Math.max(0,Math.min(100,pct||0))+'%';fill('dashKcalBar',goals.kcal?kcal/goals.kcal*100:0);fill('dashMoveBar',goals.minutes?mins/goals.minutes*100:0);fill('dashWaterBar',goals.water?water/goals.water*100:0);fill('dashStepsBar',goals.steps?steps/goals.steps*100:0);
+$('dashKcalPct').textContent=goals.kcal?`${Math.round(kcal/goals.kcal*100)}% of ${goals.kcal} kcal`:'Set a calorie guide';$('dashMovePct').textContent=`${mins} min · ${goals.minutes?Math.round(mins/goals.minutes*100)+'% of goal':'no goal set'}`;$('dashWaterPct').textContent=goals.water?`${Math.round(water/goals.water*100)}% of ${goals.water} ml`:'Set a water guide';$('dashStepsPct').textContent=goals.steps?`${Math.round(steps/goals.steps*100)}% of ${Number(goals.steps).toLocaleString()}`:'Set a step goal';
+const alert=$('calorieAlert');if(!goals.kcal){alert.className='limit-alert';alert.textContent='Set a calorie guide in Goals & preferences to see your daily status.'}else if(kcal>goals.kcal){alert.className='limit-alert over';alert.textContent=`Calorie guide exceeded by ${Math.round(kcal-goals.kcal)} kcal. This is information, not a failure.`}else if(kcal>=goals.kcal*.9){alert.className='limit-alert near';alert.textContent=`You have logged ${Math.round(kcal)} of ${goals.kcal} kcal (${Math.round(kcal/goals.kcal*100)}%). ${Math.round(goals.kcal-kcal)} kcal to your guide.`}else{alert.className='limit-alert';alert.textContent=`${Math.round(kcal)} of ${goals.kcal} kcal logged (${Math.round(kcal/goals.kcal*100)}%). ${Math.round(goals.kcal-kcal)} kcal to your guide so far.`}renderPhotoGallery()};
+// A local keyword estimator offers rough estimates only; photo-based AI needs a connected vision model/API.
+const estimateDB=[['rice',130],['red rice',135],['white rice',130],['egg',78],['chicken breast',165],['chicken',200],['beef',250],['string hopper',75],['chappati',120],['chapati',120],['naan',280],['oats',150],['banana',105],['avocado',120],['chickpea',165],['chickpeas',165],['soya',100],['paneer',265],['yogurt',60],['milk',85],['prawn',100],['fish',140],['bread',80],['cookie',150],['ice cream',140],['roti',150]];
+const foodNameEl=$('foodName');const kcalLabel=document.querySelector('label[for="foodKcal"]');if(kcalLabel){kcalLabel.innerHTML='Calories (kcal) * <span style="color:#8cc9a5">· quick estimate helper</span>'}const estimateBtn=document.createElement('button');estimateBtn.type='button';estimateBtn.className='btn small';estimateBtn.textContent='✨ Estimate calories';estimateBtn.style.marginTop='8px';$('foodKcal').parentElement.appendChild(estimateBtn);estimateBtn.onclick=()=>{const name=foodNameEl.value.toLowerCase(),portion=$('portion').value.toLowerCase();const found=estimateDB.find(x=>name.includes(x[0]));if(!found){alert('No local estimate found. Enter calories from a label or reliable database. This helper does not analyse photos or use a live AI model.');return}let servings=1;const match=portion.match(/(\d+(?:\.\d+)?)/);if(match)servings=Number(match[1]);if(/tbs|tbsp|tablespoon/.test(portion))servings*=.12;else if(/tsp|teaspoon/.test(portion))servings*=.04;else if(/cup/.test(portion))servings*=1.5;$('foodKcal').value=Math.round(found[1]*servings);alert(`Rough estimate: ${Math.round(found[1]*servings)} kcal based on a simple local keyword match. Check portion size, recipe and oil; this is not AI image recognition.`)};
+renderAvatar();
+
+
+render();
+</script>
+</body>
+</html>
